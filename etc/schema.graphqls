@@ -1,0 +1,22 @@
+#phpcs:ignoreFile
+type Query {
+    amGetGdprCookieGroups: [AmGdprCookieGroup] @resolver(class: "StorefrontX\\GdprCookieGraphQL\\Model\\Resolver\\GetCookieGroup")
+}
+
+
+type AmGdprCookieGroup {
+    name: String @doc(description: "Cookie Group Name"),
+    description: String @doc(description: "Cookie Group Description"),
+    is_essential: Boolean @doc(description: "Cookie Group is essential or not"),
+    is_enabled: Boolean @doc(description: "Cookie Group is enabled or not"),
+    cookie: [AmGdprCookie] @resolver(class: "StorefrontX\\GdprCookieGraphQL\\Model\\Resolver\\GetCookie")
+}
+
+type AmGdprCookie {
+    name: String @doc(description: "Cookie Name"),
+    description: String @doc(description: "Cookie Description"),
+    provider: String @doc(description: "Cookie Provider"),
+    lifetime: String @doc(description: "Cookie Lifetime"),
+    type: String @doc(description: "Cookie Type ID"),
+    is_enabled: Boolean @doc(description: "Cookie is enabled or not")
+}

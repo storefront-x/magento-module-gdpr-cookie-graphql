@@ -1,0 +1,20 @@
+{
+  "name": "storefront-x/magento-module-gdpr-cookie-graphql",
+  "description": "GDPR Cookie GraphQL module for Cookie Groups and Cookies",
+  "type": "magento2-module",
+  "require": {
+    "magento/framework": "*",
+    "amasty/gdpr-cookie": "2.8.*"
+  },
+  "license": [
+    "MIT"
+  ],
+  "autoload": {
+    "files": [
+      "registration.php"
+    ],
+    "psr-4": {
+      "StorefrontX\\GdprCookieGraphQL\\": ""
+    }
+  }
+}
